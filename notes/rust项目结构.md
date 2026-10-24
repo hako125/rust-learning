@@ -1,6 +1,8 @@
 
 # Rust 项目结构
 
+练习: cargo run -p project-struct
+
 层级：**package**（Cargo.toml）→ **crate**（编译单元）→ **module**（代码组织单元）
 
 ## package

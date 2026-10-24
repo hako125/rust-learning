@@ -10,4 +10,10 @@ Remove-Item -Recurse -Force crates/ch02-ownership/.git
 Remove-Item -Force crates/ch02-ownership/.gitignore
 ```
 
+运行某个章节练习项目的指令:
+
+```cmd
+cargo run -p <项目名>
+```
+
 TODO：整合成一个程序
