@@ -1,0 +1,6 @@
+# 仓库中统一用 LF，检出时不转换
+* text=auto eol=lf
+# Windows 专用脚本保留 CRLF（如有）
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
