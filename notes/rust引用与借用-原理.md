@@ -3,9 +3,9 @@
 > 来源：https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html
 > 核心：借用检查器 = 一套**编译期权限系统（R/W/O/F）**，保证"数据不能同时被别名和修改"。
 
-## 1. 为什么需要引用
+## 为什么需要引用
 
-move-only 的 API 很麻烦：函数拿到值就吃掉所有权，调用后就没了。
+所有权的移动导致写起来很麻烦
 
 ```rust
 fn greet(g1: String, g2: String) -> String { g1 + " and " + &g2 }
@@ -18,15 +18,10 @@ println!("{m1}");   // ❌ E0382: m1 已被 move
 
 两种解法：
 
-```rust
-// 方案 A：返回所有权（可行但啰嗦）
-fn greet(g1: String, g2: String) -> String { g1 + " and " + &g2 }
-let (m1, m2, msg) = ...
-
-// 方案 B：借用（Rust 推荐）✅
-fn greet(g1: &String, g2: &String) -> String { g1 + " and " + g2 }
-greet(&m1, &m2);     // m1/m2 依然可用
-```
+1. 返回所有权
+   ![621](IMG-20261026225312858.png)
+2.  使用引用
+   ![](IMG-20261026225357986.png)
 
 ## 2. 引用是"非拥有指针"
 

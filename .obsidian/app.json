@@ -1,4 +1,5 @@
 {
   "attachmentFolderPath": "notes/assets",
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "promptDelete": false
 }

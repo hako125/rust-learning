@@ -3,7 +3,7 @@
     "attachmentRoot": "",
     "saveAttE": "obsFolder",
     "attachmentPath": "./${notename}",
-    "attachFormat": "IMG-${date}",
+    "attachFormat": "${notename}-${date}",
     "type": "GLOBAL"
   },
   "dateFormat": "YYYYMMDDHHmmssSSS",

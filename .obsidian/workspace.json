@@ -11,17 +11,40 @@
             "id": "fd30ee2f4c78d5dd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "notes/rust引用与借用-原理.md",
-                "mode": "source",
-                "source": false
+                "file": "notes/assets/Pasted image 20261025114356.png"
               },
-              "icon": "lucide-file",
-              "title": "rust引用与借用-原理"
+              "icon": "lucide-image",
+              "title": "Pasted image 20261025114356"
+            }
+          },
+          {
+            "id": "a9e207ebb7c71f35",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "notes/assets/Pasted image 20261026015040.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20261026015040"
+            }
+          },
+          {
+            "id": "23ab12b80204e752",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "notes/assets/引用与借用/引用与借用-20261026235919955.png"
+              },
+              "icon": "lucide-image",
+              "title": "引用与借用-20261026235919955"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -99,7 +122,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/rust所有权.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +140,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/rust所有权.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -170,11 +191,12 @@
               "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -188,33 +210,35 @@
       "bases:新建数据库": false
     }
   },
-  "active": "fd30ee2f4c78d5dd",
+  "active": "9c4723611ecce461",
   "lastOpenFiles": [
+    "notes/assets/Pasted image 20261027003254.png",
+    "notes/assets/Pasted image 20261025114102.png",
+    "notes/assets/引用与借用/引用与借用-20261026235919955.png",
+    "notes/assets/引用与借用/引用与借用-20261026235640199.png",
+    "notes/引用与借用.md",
+    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnks2n1lvs-0gmqhls-co0l8v9mtdy41hlqk5pk7absz/work-products.bin",
+    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnks2n1lvs-0gmqhls-co0l8v9mtdy41hlqk5pk7absz/query-cache.bin",
+    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnks2n1lvs-0gmqhls-co0l8v9mtdy41hlqk5pk7absz/dep-graph.bin",
+    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnks2n1lvs-0gmqhls-co0l8v9mtdy41hlqk5pk7absz",
+    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnks2n1mns-0jx04va-2yigitvojj0vzq246hr0jybk9/work-products.bin",
+    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnks2n1mns-0jx04va-2yigitvojj0vzq246hr0jybk9/query-cache.bin",
+    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnks2n1mns-0jx04va-2yigitvojj0vzq246hr0jybk9/dep-graph.bin",
+    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnks2n1mns-0jx04va-2yigitvojj0vzq246hr0jybk9",
+    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnks2n1lvs-0gmqhls-working/dep-graph.part.bin",
+    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnks2n1mns-0jx04va-working/work-products.bin",
+    "notes/rust项目结构.md",
     "notes/rust所有权.md",
+    "notes/assets/Pasted image 20261026232246.png",
+    "notes/assets/rust所有权/rust所有权-20261026232416285.png",
+    "notes/assets/assets/rust所有权/IMG-20261026232317959.png",
+    "notes/附件/Pasted image 20261026232214.png",
+    "notes/assets/Pasted image 20261026232153.png",
+    "notes/assets/Pasted image 20261026232129.png",
+    "notes/assets/Pasted image 20261026015040.png",
     "notes/rust引用与借用-原理.md",
     "notes/rust所有权-原理.md",
-    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnjqharkqr-1edsnpb-d7b4p1izmpaa5kdn3nazo4ztm/work-products.bin",
-    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnjqharkqr-1edsnpb-d7b4p1izmpaa5kdn3nazo4ztm/query-cache.bin",
-    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnjqharkqr-1edsnpb-d7b4p1izmpaa5kdn3nazo4ztm/dep-graph.bin",
-    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnjqharkqr-1edsnpb-d7b4p1izmpaa5kdn3nazo4ztm",
-    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnjqharkqn-1upvq3l-c58eyrum9qa55x97gt7e33bkl/work-products.bin",
-    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnjqharkqn-1upvq3l-c58eyrum9qa55x97gt7e33bkl/query-cache.bin",
-    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnjqharkqn-1upvq3l-c58eyrum9qa55x97gt7e33bkl/dep-graph.bin",
-    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnjqharkqn-1upvq3l-c58eyrum9qa55x97gt7e33bkl",
-    "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnjqharkqn-1upvq3l-working/dep-graph.part.bin",
-    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnjqharkqr-1edsnpb-working/dep-graph.part.bin",
-    "notes/assets/Pasted image 20261026015040.png",
-    "notes/assets/rust所有权-原理/IMG-20261026011330823.png",
-    "notes/assets/rust所有权-原理/IMG-20261026005913163.png",
-    "notes/assets/rust所有权-原理/IMG-20261026005556756.png",
-    "notes/assets/rust所有权-原理/IMG-20261026005512448.png",
-    "notes/assets/rust所有权-原理/IMG-20261026005401474.png",
-    "notes/rust项目结构.md",
     "notes/rust所有权-深入(布朗版ch04-01).md",
-    "notes/assets/Pasted image 20261025114356.png",
-    "notes/assets/Pasted image 20261025114102.png",
-    "notes/assets/rust所有权/IMG-20261025113121476.png",
-    "notes/assets/assets/rust所有权/IMG-20261025113050083.png",
     "notes/rust函数&流程控制.md"
   ]
 }
