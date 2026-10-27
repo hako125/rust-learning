@@ -3,15 +3,15 @@ fn main() {
 }
 
 // 测试所有权的移动
-fn test_ownership_move() {
+fn _test_ownership_move() {
     let first = String::from("Ferris");
     println!("first的地址：{:p}", first.as_ptr());
-    let full = add_suffix(first);
+    let full = _add_suffix(first);
     println!("full的地址：{:p}", full.as_ptr());
     println!("{full}");
 }
 
-fn add_suffix( name: String) -> String {
+fn _add_suffix( name: String) -> String {
     println!("name的地址：{:p}", name.as_ptr());
     // name.push_str(" Jr.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     println!("name的地址：{:p}", name.as_ptr());
@@ -19,7 +19,7 @@ fn add_suffix( name: String) -> String {
 }
 
 // 测试引用
-fn test_reference() {
+fn _test_reference() {
     let x = 233;
     let x = &x;  // 创建一个引用
     let p: *const i32 = x as *const i32;  // 将引用转换为指针
@@ -44,8 +44,9 @@ fn greet(g1: *const String, g2: *const String) { // note the ampersands
 }
 
 // 测试解引用
-// fn test_dereference() {
-//     let x = Box::new("2233");
-//     let y = &x;
-//     let z = **y;
-// }  
+fn _test_dereference() {
+    let x = Box::new("2233");
+    let y = &x;
+    // let z = *y;  // 不行 这企图于把x的所有权通过y转移给了z， 而y是没有数据的所有权的。
+    let z = **y; // 这样可以，因为拿到的是"2233"这一个Copy数据, 这里可以直接值传递。
+}  

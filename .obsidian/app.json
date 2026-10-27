@@ -1,5 +1,9 @@
 {
-  "attachmentFolderPath": "notes/assets",
+  "attachmentFolderPath": "/",
   "useMarkdownLinks": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "newFileLocation": "root",
+  "newFileFolderPath": "notes/assets",
+  "newLinkFormat": "absolute",
+  "alwaysUpdateLinks": true
 }
