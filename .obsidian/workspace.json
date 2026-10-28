@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/引用与借用.md",
+                "file": "notes2/Rust所有权.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "引用与借用"
+              "title": "Rust所有权"
             }
           }
         ]
@@ -189,6 +189,7 @@
   },
   "active": "e3ffd7d5ae0659fc",
   "lastOpenFiles": [
+    "notes/引用与借用.md",
     "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnlkz5c6qy-1tqfwhf-0s2todwbk05i8p9ro2fd475ui/work-products.bin",
     "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnlkz5c6qy-1tqfwhf-0s2todwbk05i8p9ro2fd475ui/dep-graph.bin",
     "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnlkz5c6qy-1tqfwhf-0s2todwbk05i8p9ro2fd475ui/query-cache.bin",
@@ -199,10 +200,8 @@
     "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnlkz5c3ea-0m0r5bh-working/dep-graph.bin",
     "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnlkz5c3ea-0m0r5bh-working",
     "target/debug/incremental/ownership-3gvikdd6o1obc/s-hnlkz5c3ea-0m0r5bh.lock",
-    "target/debug/incremental/ownership-1ghhb81hypz3m/s-hnlky62i4s-1gjcpia-a02fgosh2es0ukgny9i3xt9gi/work-products.bin",
     "notes/assets/引用与借用/引用与借用-20261027180932993.png",
     "notes/assets/引用与借用/引用与借用-20261027180544699.png",
-    "notes/引用与借用.md",
     "notes/assets/引用与借用/引用与借用-20261027180330476.png",
     "notes/assets/引用与借用/引用与借用-20261026235640199.png",
     "notes/assets/引用与借用/引用与借用-20261026235919955.png",
