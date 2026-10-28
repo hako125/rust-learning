@@ -1,5 +1,5 @@
 fn main() {
-    test_reference2();
+    _test_dereference();
 }
 
 // 测试所有权的移动
@@ -11,7 +11,7 @@ fn _test_ownership_move() {
     println!("{full}");
 }
 
-fn _add_suffix( name: String) -> String {
+fn _add_suffix(name: String) -> String {
     println!("name的地址：{:p}", name.as_ptr());
     // name.push_str(" Jr.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     println!("name的地址：{:p}", name.as_ptr());
@@ -21,10 +21,10 @@ fn _add_suffix( name: String) -> String {
 // 测试引用
 fn _test_reference() {
     let x = 233;
-    let x = &x;  // 创建一个引用
-    let p: *const i32 = x as *const i32;  // 将引用转换为指针
-    println!("p的地址：{:p}", p);   //  0x2efcf7f914
-    println!("x的地址：{:p}", x);   //  0x2efcf7f914
+    let x = &x; // 创建一个引用
+    let p: *const i32 = x as *const i32; // 将引用转换为指针
+    println!("p的地址：{:p}", p); //  0x2efcf7f914
+    println!("x的地址：{:p}", x); //  0x2efcf7f914
 }
 
 fn test_reference2() {
@@ -37,7 +37,8 @@ fn test_reference2() {
     let s = format!("{} {}", m1, m2);
 }
 
-fn greet(g1: *const String, g2: *const String) { // note the ampersands
+fn greet(g1: *const String, g2: *const String) {
+    // note the ampersands
     unsafe {
         println!("{} {}!", *g1, *g2);
     }
@@ -49,4 +50,14 @@ fn _test_dereference() {
     let y = &x;
     // let z = *y;  // 不行 这企图于把x的所有权通过y转移给了z， 而y是没有数据的所有权的。
     let z = **y; // 这样可以，因为拿到的是"2233"这一个Copy数据, 这里可以直接值传递。
-}  
+
+    let q = Box::new(2);
+    let r = Box::new(&q);
+}
+
+fn test_per() {
+    let s = String::from("Hello world");
+    let s_ref = &s;
+    // drop(s);
+    println!("{}", s_ref);
+}
