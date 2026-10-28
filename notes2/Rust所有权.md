@@ -1,30 +1,52 @@
 # Rust所有权
 
+>  参考资料：
 >  **The Rust Programming Language（Brown 大学 Cognitive Engineering Lab 的交互式实验版本）：**https://rust-book.cs.brown.edu/ch04-01-what-is-ownership.html#safety-is-the-absence-of-undefined-behavior
 >  **The Rust Programming Language（官方）：**https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
 
-> **一句话记忆**：一个主人（own）、交出即失效（move）。
 
-## 关于 Rust 所有权的个人理解
+## Why Ownership?
 
-C/C++ 中经常出现的堆内存问题：
+C/C++ 使用中需要时刻留意堆内存问题：
 
 - 没人负责 free → 内存泄漏
 - 多个人想 free → 二次释放
 - free 之后还有人用 → 悬垂指针
 
-这三类问题的根因其实是同一个：**同一块内存同时有两个名字，且其中一个改了或释放了它**。
+这三类问题的根因其实是同一个：**因为用了指针，多个变量共享了同一个数据的内存空间**。
 
-所以 Rust 的所有权就是为避免这类问题而制定的**编译期堆内存使用规则**：每份堆数据只有一个主人，主人决定它何时交出 **（move）**、何时释放（drop）。
+Rust想要通过限制共享情景来达到编译期间就避免以上内存问题的发生，于是创造了所有权规则（Ownership）
 
 ## Move
 
-Rust 赋值操作时会伴随所有权责任（谁负责 drop 数据）的转移（Move），失去所有权的变量将会在变量表上被写死，因此无法再访问、释放数据（E0382: use of moved value）。
+可以先把所有权理解成一种责任：**负责销毁这一块数据的内存空间**。
 
-### Copy Trait
+- Rust 中使用赋值操作的时候，会将数据的所有权交给变量，拥有所有权的变量一旦被销毁，那么对应的数据的内存空间就会被释放。
+- 所有权是可以转移的，例如从变量a转移到变量b，但是所有权转移之后，失去所有权的变量将被标记为“moved”，这个变量将无法再访问之前的数据。
 
- `Copy` 是 Move 的豁免：像 `let a = 123; let b = a;` 这种完全没有必要使用所有权管理，Rust 用 `Copy` 标记这类类型，因此这种赋值操作不触发 Move。
+误区1： **moved 变量并不是被销毁了**，如果给它赋值了其他的值，那么它依然可用。
 
+```rust
+// 1. 一个变量被move后， 那么我给这个变量赋值成其他值会怎样
+let mut x = String::from("hello");
+let y = x; // x被move到y中，x不再有效
+
+// x.push_str("world");  // 报错， x已经move，无法再访问之前所拥有的数据
+
+x = String::from("world");   // x重新赋值，x重新拥有了一个新的String对象和之前的已经没关系了
+println!("y: {}", y);
+println!("x: {}", x);
+```
+
+Rust只有拥有所有权的变量才负责对应的数据的销毁，**避免了二次销毁问题**。
+
+```rust
+let x = String::from("hello");
+let y = x;  // y 获得所有权
+// 执行完毕后，销毁x和y，因为所有权只有y有，所以堆上的数据在y销毁的时候才销毁，销毁x的时候不会销毁
+```
+
+**Copy Trait**： `Copy` 是 Move 的豁免：像 `let a = 123; let b = a;` 这种完全没有必要使用所有权管理，Rust 用 `Copy` 标记这类类型（如：i32, u32,bool），因此这种赋值操作不触发 Move。
 
 ### 函数传参 = 赋值
 

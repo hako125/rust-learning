@@ -1,52 +1,42 @@
 fn main() {
-    test_reference2();
+    _test_borrow();
 }
 
-// 测试所有权的移动
-fn _test_ownership_move() {
-    let first = String::from("Ferris");
-    println!("first的地址：{:p}", first.as_ptr());
-    let full = _add_suffix(first);
-    println!("full的地址：{:p}", full.as_ptr());
-    println!("{full}");
+fn _test_move() {
+    // 1. 一个变量被move后， 那么我给这个变量赋值成其他值会怎样
+    let mut x = String::from("hello");
+    let y = x; // x被move到y中，x不再有效
+
+    // x.push_str("world");  // 报错， x已经move，无法再访问之前所拥有的数据
+
+    x = String::from("world"); // x重新赋值，x重新拥有了一个新的String对象和之前的已经没关系了
+
+    println!("y: {}", y);
+    println!("x: {}", x);
 }
 
-fn _add_suffix( name: String) -> String {
-    println!("name的地址：{:p}", name.as_ptr());
-    // name.push_str(" Jr.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    println!("name的地址：{:p}", name.as_ptr());
-    name
+fn _test_borrow() {
+    let mut a = vec![1, 2, 3];
+    let b = &a[2];
+    let c = &a[1];
+    // a.pop(); // 报错， 因为在借用期间，不能修改a
+
+    println!("b: {}", b);
+    println!("c: {}", c);
+
+    a.pop(); // 现在可以修改a了，因为b的借用已经结束
 }
 
-// 测试引用
-fn _test_reference() {
-    let x = 233;
-    let x = &x;  // 创建一个引用
-    let p: *const i32 = x as *const i32;  // 将引用转换为指针
-    println!("p的地址：{:p}", p);   //  0x2efcf7f914
-    println!("x的地址：{:p}", x);   //  0x2efcf7f914
+fn _test_borrow_mut() {
+    let mut a = vec![1, 2, 3];
+    
+    let b = &mut a;
+    
+     // 可变借用a
+    b.push(4); // 可以修改a
+    // println!("a: {}", a[1]);  // 报错， 因为b是可变借用， 在其使用期间，a不能读取，不能修改
+    println!("c: {:?}", c);
+    println!("b: {:?}", b);
+
+    println!("a: {}", a[1]);
 }
-
-fn test_reference2() {
-    let m1 = String::from("Hello");
-    let m2 = String::from("world");
-
-    let p1 = &m1 as *const String; // note the ampersands
-    let p2 = &m2 as *const String; // note the ampersands
-    greet(p1, p2); // note the ampersands
-    let s = format!("{} {}", m1, m2);
-}
-
-fn greet(g1: *const String, g2: *const String) { // note the ampersands
-    unsafe {
-        println!("{} {}!", *g1, *g2);
-    }
-}
-
-// 测试解引用
-fn _test_dereference() {
-    let x = Box::new("2233");
-    let y = &x;
-    // let z = *y;  // 不行 这企图于把x的所有权通过y转移给了z， 而y是没有数据的所有权的。
-    let z = **y; // 这样可以，因为拿到的是"2233"这一个Copy数据, 这里可以直接值传递。
-}  
